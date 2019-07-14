@@ -11,7 +11,7 @@ case $1 in
     npm run build
     ;;
   test)
-    npm test $@
+    npm $@
     ;;
   *)
     exec "$@"

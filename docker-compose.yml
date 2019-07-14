@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  conichi-smart-checkout:
+    container_name: conichi-smart-checkout
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '9000:9000'
+    environment:
+      - NODE_ENV=development

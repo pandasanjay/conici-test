@@ -4,9 +4,15 @@
   "description": "This is a application to evaluate the skill not for commercial uses.",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --mode development --watch",
+    "start": "webpack-dev-server --host 0.0.0.0 --mode development --watch-poll 500 --watch-aggregate-timeout 300 --watch ",
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest --watch",
+    "docker:image:build": "docker image build -t conichi-smart-checkout:app .",
+    "docker:run:watch:linux": "docker container run -it -p 9000:9000 -v $(pwd):/app conichi-smart-checkout:app",
+    "docker:run:watch:win": "docker container run -it -p 9000:9000 -v ${PWD}:/app conichi-smart-checkout:app",
+    "docker:build": "docker container run -it -v $(pwd):/app conichi-smart-checkout:app build",
+    "docker:test": "docker container run -it -v $(pwd):/app react:app test",
+    "docker:compose:build:watch": "docker-compose up --build -d"
   },
   "keywords": [
     "CONICHI",

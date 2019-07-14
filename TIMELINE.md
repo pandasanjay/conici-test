@@ -20,6 +20,11 @@ Here for local development I am using webpack-dev-server which is equivalent of 
 
 ### Unit Test Setup
 
+```
+Date: 12/07/2019
+Duration: 45min apx.
+```
+
 I can use karma, jasmine, but I find **jest** having reach feature and faster execution.
 I am going to use **Jest** which is a best unit test runner.
 
@@ -46,3 +51,14 @@ Why I am using cypress?
 ```
 
 ### DOCKER SETUP
+
+```
+Date: 13/07/2019
+Duration: 2hr (Took little bit loger, As I faced some issue with docker setup in windows WSL)
+```
+
+As a modern application, DOCKER env setup is most need which enables each team member have same env setup and application will run without any prerequisit other then docker and docker-componse.
+
+- Added **Dockerfile** (Which will help to build the image with right set of tools)
+- Added **run.sh** (Which is used as a ENTRYPOINT in docker file and help run multiple operation with one image)
+- Added **docker-compose.yml** (Which is creates easy dev environment to run and debug application)
