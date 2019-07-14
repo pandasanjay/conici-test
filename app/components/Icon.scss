@@ -1,0 +1,15 @@
+.sh-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.sh-i-location-uk {
+        background-image: url("./../assets/location-uk.png");
+    }
+
+    &.sh-i-menu-bar {
+        background-image: url("./../assets/menu-bars.png");
+    }
+}

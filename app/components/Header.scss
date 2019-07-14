@@ -1,0 +1,10 @@
+@import "../var.scss";
+
+.sh-navbar {
+    border-bottom: 3px solid #85BC22;
+
+    .sh-title {
+        color: $header-title-color;
+        font-family: $font-family
+    }
+}

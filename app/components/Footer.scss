@@ -1,0 +1,25 @@
+@import "../var.scss";
+
+.sh-footer {
+    .sh-copy-write {
+        font-family: $font-family;
+        font-size: 12px;
+    }
+
+}
+
+.sh-company-logo {
+    width: 86px;
+    height: 25px;
+    background-image: url("./../assets/conichi.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sh-partner-logo {
+    width: 148px;
+    height: 25px;
+    background-image: url("./../assets/partner-logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}

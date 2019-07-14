@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   entry: "./app/index.js",
@@ -13,7 +15,8 @@ module.exports = {
     minimizer: [
       new UglifyJsPlugin({
         test: /\.js(\?.*)?$/i
-      })
+      }),
+      new OptimizeCSSAssetsPlugin({})
     ]
   },
   module: {
@@ -27,12 +30,19 @@ module.exports = {
       },
       { test: /\.ejs$/, loader: "ejs-loader" },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        test: /\.scss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: { hmr: process.env.NODE_ENV === "development" }
+          },
+          { loader: "css-loader", options: { sourceMap: true } },
+          { loader: "sass-loader", options: { sourceMap: true } }
+        ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"]
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: ["url-loader"]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -59,6 +69,9 @@ module.exports = {
       filename: "index.html",
       inject: true,
       TITLE: "Smart checkout"
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css"
     }),
     new webpack.HotModuleReplacementPlugin()
   ],
