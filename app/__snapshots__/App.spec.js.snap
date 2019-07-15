@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test the App component should have match with snapshot 1`] = `
+<HashRouter>
+  <Layout>
+    <Route
+      component={[Function]}
+      path="/"
+    />
+  </Layout>
+</HashRouter>
+`;

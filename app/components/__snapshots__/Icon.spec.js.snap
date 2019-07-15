@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should have match with snapshot 1`] = `
+<span
+  className="sh-icon sh-i-icon-name"
+/>
+`;

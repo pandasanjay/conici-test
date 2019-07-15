@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.scss";
 import Conichi from "../assets/conichi.png";
 import PartnerLogo from "../assets/partner-logo.png";
-const Footer = function() {
+const Footer = function({ copywrite }) {
   return (
     <div>
       <div class="d-flex justify-content-between pt-5">
@@ -15,7 +15,7 @@ const Footer = function() {
       </div>
       <footer className="navbar navbar-light bg-light sh-footer">
         <div />
-        <div className="sh-copy-write p-3">@ 2018 - Hotel Beacons GmbH</div>
+        <div className="sh-copy-write p-3">{copywrite}</div>
         <div />
       </footer>
     </div>
