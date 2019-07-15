@@ -4,7 +4,7 @@ import "./Header.scss";
 const Header = ({ title }) => {
   return (
     <nav className="navbar navbar-light p-0 sh-navbar pt-4">
-      <div className="p-2 ">
+      <div className="p-2 pl-4">
         <a className="sh-menu">
           <Icon iconname="menu-bar" />
         </a>
@@ -14,7 +14,7 @@ const Header = ({ title }) => {
           {title}
         </a>
       </div>
-      <div className="p-2 ">
+      <div className="p-2 pr-4">
         <a className="sh-location">
           <Icon iconname="location-uk" />
         </a>

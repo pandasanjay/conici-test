@@ -5,6 +5,44 @@ body {
     display: block;
 
     .bg-light {
-        background-color: rgba(155, 155, 155, 0.18) !important
+        background-color: $secondry-color !important
+    }
+
+    .btn {
+        border-radius: 2rem;
+
+        &.btn-primary {
+            background: $primary-color;
+            border-color: $primary-color;
+
+            &:active {
+                background-color: $primary-color !important;
+                border-color: $primary-color !important;
+                box-shadow: none !important;
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        &.btn-outline-primary {
+            color: $primary-color;
+            border-color: $primary-color;
+
+            &:active {
+                background-color: $primary-color !important;
+                border-color: $primary-color !important;
+                box-shadow: none !important;
+            }
+
+            &:hover {
+                background-color: transparent
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
     }
 }

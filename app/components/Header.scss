@@ -1,7 +1,7 @@
 @import "../var.scss";
 
 .sh-navbar {
-    border-bottom: 3px solid #85BC22;
+    border-bottom: 3px solid $primary-color;
 
     .sh-title {
         color: $header-title-color;

@@ -3,7 +3,7 @@
 exports[`Footer component should have match with snapshot 1`] = `
 <div>
   <div
-    class="d-flex justify-content-between pt-5"
+    className="d-flex justify-content-between pt-5"
   >
     <div
       className="pb-5 pl-5"
@@ -28,9 +28,7 @@ exports[`Footer component should have match with snapshot 1`] = `
     <div />
     <div
       className="sh-copy-write p-3"
-    >
-      @ 2018 - Hotel Beacons GmbH
-    </div>
+    />
     <div />
   </footer>
 </div>

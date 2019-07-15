@@ -2,11 +2,19 @@
 
 exports[`Test the App component should have match with snapshot 1`] = `
 <HashRouter>
-  <Layout>
+  <Connect(withRouter(Layout))>
     <Route
-      component={[Function]}
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(SmartCheckout)",
+          "type": [Function],
+        }
+      }
       path="/"
     />
-  </Layout>
+  </Connect(withRouter(Layout))>
 </HashRouter>
 `;

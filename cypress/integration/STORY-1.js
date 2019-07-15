@@ -37,14 +37,14 @@ describe("STORY-1 - Basic layout and HEADER and FOOTER", () => {
           .should("have.class", "sh-i-location-uk");
       });
 
-      it("AC3- should have footer copywrite text", () => {
+      it("AC3- should have footer copyright text", () => {
         /**
          * AC3- As a user, I want to see
          * footer with copyright text
          * "@ 2018 - Hotel Beacons GmbH"
          */
         cy.get(".sh-footer")
-          .contains("@ 2018 - Hotel Beacons GmbH")
+          .contains("© 2018 - Hotel Beacons GmbH")
           .should("be.visible");
       });
 

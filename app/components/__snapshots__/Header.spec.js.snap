@@ -5,7 +5,7 @@ exports[`Header component should have match with snapshot 1`] = `
   className="navbar navbar-light p-0 sh-navbar pt-4"
 >
   <div
-    className="p-2 "
+    className="p-2 pl-4"
   >
     <a
       className="sh-menu"
@@ -26,7 +26,7 @@ exports[`Header component should have match with snapshot 1`] = `
     </a>
   </div>
   <div
-    className="p-2 "
+    className="p-2 pr-4"
   >
     <a
       className="sh-location"

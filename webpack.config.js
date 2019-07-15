@@ -12,6 +12,7 @@ module.exports = {
     hints: false
   },
   optimization: {
+    nodeEnv: process.env.NODE_ENV,
     minimizer: [
       new UglifyJsPlugin({
         test: /\.js(\?.*)?$/i

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout conatiner should have match with snapshot 1`] = `
+<div>
+  <Header />
+  <div
+    className="container"
+  />
+  <Footer />
+</div>
+`;

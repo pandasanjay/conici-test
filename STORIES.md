@@ -28,11 +28,11 @@ AC1- As a user, I want to see
 a heading content from content api
 https://rawgit.com/rohit-dantas-conichi/3cf7d1da56f60959adfc4664cff31189/raw/e97db2ad3940dce2a7da1ececcc1375b1f46311d/page-select_billing_address-en.json
 
-AC1- As a user, I want to see
+AC2- As a user, I want to see
 back and submit button and a
 separetor above the button
 
-AC2- As a user, I want to see
+AC3- As a user, I want to see
 add new billing addess component.
 need to loaded by content service.
 ```

@@ -1,8 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { HashRouter as Router, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import SmartCheckout from "./containers/smart-checkout";
+import Layout from "./containers/Layout";
+import SmartCheckout from "./containers/SmartCheckout";
 import App from "./App";
 
 describe("Test the App component", function() {

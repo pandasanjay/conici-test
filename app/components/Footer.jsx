@@ -2,10 +2,10 @@ import React from "react";
 import "./Footer.scss";
 import Conichi from "../assets/conichi.png";
 import PartnerLogo from "../assets/partner-logo.png";
-const Footer = function({ copywrite }) {
+const Footer = function({ copyright }) {
   return (
     <div>
-      <div class="d-flex justify-content-between pt-5">
+      <div className="d-flex justify-content-between pt-5">
         <div className="pb-5 pl-5">
           <img src={Conichi} data-selector="conichi-logo" />
         </div>
@@ -15,7 +15,7 @@ const Footer = function({ copywrite }) {
       </div>
       <footer className="navbar navbar-light bg-light sh-footer">
         <div />
-        <div className="sh-copy-write p-3">{copywrite}</div>
+        <div className="sh-copy-write p-3">{copyright}</div>
         <div />
       </footer>
     </div>
