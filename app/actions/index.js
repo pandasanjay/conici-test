@@ -30,3 +30,10 @@ export const billingAddressAction = () => dispatch => {
       }
     });
 };
+
+export const selectAddressAction = id => dispatch => {
+  dispatch({
+    type: constants.SELECT_BILLING_ADRESS,
+    payload: id
+  });
+};

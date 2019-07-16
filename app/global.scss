@@ -45,4 +45,10 @@ body {
             }
         }
     }
+
+    @media (min-width: 690px) {
+        .container {
+            max-width: 690px !important;
+        }
+    }
 }

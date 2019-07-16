@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { billingAddressAction } from "../actions";
+import { billingAddressAction, selectAddressAction } from "../actions";
 import "./SmartCheckout.scss";
 import ComponentLoader from "../components/ComponentLoader";
+import BillingAddress from "../components/BillingAddressSection";
 
 export class SmartCheckout extends Component {
   constructor(props) {
@@ -22,11 +23,20 @@ export class SmartCheckout extends Component {
         this.props.globalReducer.pageContents.global) ||
       {};
 
+    const addressList = this.props.billingAddressReducer.address || [];
+
     return (
       <div>
         <h2 className="text-center pt-3">{heading}</h2>
         <p className="text-center">{description}</p>
-
+        {addressList.map((data, i) => (
+          <BillingAddress
+            {...data}
+            key={i}
+            id={i}
+            onSelect={this.props.selectAddress}
+          />
+        ))}
         <ComponentLoader name="add_new_address" data={components || {}} />
         <div className="sh-actions d-flex mt-5 justify-content-between pt-2 pb-2">
           <div className="pt-2 pb-2">
@@ -54,7 +64,8 @@ export class SmartCheckout extends Component {
  * mapDispatchToProps
  */
 const mapDispatchToProps = dispatch => ({
-  getBillingAddress: () => dispatch(billingAddressAction())
+  getBillingAddress: () => dispatch(billingAddressAction()),
+  selectAddress: id => dispatch(selectAddressAction(id))
 });
 /*
  * mapStateToProps

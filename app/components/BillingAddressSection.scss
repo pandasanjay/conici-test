@@ -1,0 +1,22 @@
+.sh-billing-address {
+    border-radius: 0.5rem !important;
+    cursor: pointer;
+    position: relative;
+}
+
+.left-circle {
+    position: absolute;
+    right: -1px;
+    height: 50px;
+    width: 25px;
+    border-bottom-left-radius: 90px;
+    border-top-left-radius: 90px;
+    top: 47px;
+    background: #fff;
+
+    .sh-i-selected {
+        margin-top: 12px;
+        position: absolute;
+        right: -11px;
+    }
+}

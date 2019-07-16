@@ -7,7 +7,7 @@ const AddNewAddress = ({ heading, description }) => {
         <div className="sh-h3 text-uppercase">{heading}</div>
         <div className="text-uppercase">{description}</div>
       </div>
-      <div className="pt-4">
+      <div className="align-self-center">
         <Icon iconname="icon-add-active" />
       </div>
     </div>

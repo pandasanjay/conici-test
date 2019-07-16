@@ -16,4 +16,18 @@
     &.sh-i-icon-add-active {
         background-image: url("./../assets/icon-add-active.png");
     }
+
+    &.sh-i-edit {
+        background-image: url("./../assets/edit.png");
+    }
+
+    &.sh-i-edit-invert {
+        background-image: url("./../assets/edit-invert.png");
+
+    }
+
+    &.sh-i-selected {
+        background-image: url("./../assets/selected.png");
+
+    }
 }

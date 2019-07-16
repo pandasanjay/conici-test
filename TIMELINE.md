@@ -2,6 +2,10 @@
 
 ## Timeline
 
+```
+Total time spent: 16hr 15min
+```
+
 This timeline is the way to evaluate, how much time taken to setup the application step by step.
 
 ### Application basic setup
@@ -32,6 +36,11 @@ To work with react components **enzyme** is the best tool out there.
 
 ### BDD Setup
 
+```
+Date: 12/07/2019
+Duration: 30min apx.
+```
+
 As I found protractor besically work with Angular, we can do some hack to make it run in react as well. So here I have two choice
 
 - WebdriverIo (Cross browser)
@@ -50,6 +59,8 @@ Why I am using cypress?
 
 ```
 
+All the BDD is writen based on STORY no.
+
 ### DOCKER SETUP
 
 ```
@@ -62,3 +73,16 @@ As a modern application, DOCKER env setup is most need which enables each team m
 - Added **Dockerfile** (Which will help to build the image with right set of tools)
 - Added **run.sh** (Which is used as a ENTRYPOINT in docker file and help run multiple operation with one image)
 - Added **docker-compose.yml** (Which is creates easy dev environment to run and debug application)
+
+### Design and development based on STORIES.md
+
+```
+Please find the time taken in STORIES.md
+```
+
+All the stories includes
+
+1. Design
+2. Development
+3. Unit test
+4. BDD
