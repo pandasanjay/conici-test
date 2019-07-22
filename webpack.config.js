@@ -7,7 +7,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
-  entry: "./app/index.js",
+  entry: [
+    "react-app-polyfill/ie9",
+    "react-app-polyfill/stable",
+    "./app/index.js"
+  ],
   performance: {
     hints: false
   },
