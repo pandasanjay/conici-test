@@ -5,7 +5,11 @@ describe("Smart checkout component with out data", () => {
   let component;
   beforeEach(() => {
     component = shallow(
-      <SmartCheckout globalReducer={{}} getBillingAddress={jest.fn()} />
+      <SmartCheckout
+        globalReducer={{}}
+        getBillingAddress={jest.fn()}
+        billingAddressReducer={{}}
+      />
     );
   });
   it("should have match with snapshot", () => {
@@ -35,6 +39,7 @@ describe("Smart checkout component with data", () => {
       <SmartCheckout
         globalReducer={globalReducerStub}
         getBillingAddress={jest.fn()}
+        billingAddressReducer={{}}
       />
     );
   });

@@ -12,29 +12,10 @@ exports[`Smart checkout component with data should have match with snapshot 1`] 
   >
     Some desc
   </p>
-  <div
-    className="sh-add-card d-flex pt-5 pb-5 p-3 justify-content-between"
-  >
-    <div>
-      <div
-        className="sh-h3"
-      >
-        ADD NEW
-      </div>
-      <div
-        className="text-uppercase"
-      >
-        BILLING ADDRESS
-      </div>
-    </div>
-    <div
-      className="pt-4"
-    >
-      <Icon
-        iconname="icon-add-active"
-      />
-    </div>
-  </div>
+  <ComponentLoader
+    data={Object {}}
+    name="add_new_address"
+  />
   <div
     className="sh-actions d-flex mt-5 justify-content-between pt-2 pb-2"
   >
@@ -70,29 +51,10 @@ exports[`Smart checkout component with out data should have match with snapshot 
   <p
     className="text-center"
   />
-  <div
-    className="sh-add-card d-flex pt-5 pb-5 p-3 justify-content-between"
-  >
-    <div>
-      <div
-        className="sh-h3"
-      >
-        ADD NEW
-      </div>
-      <div
-        className="text-uppercase"
-      >
-        BILLING ADDRESS
-      </div>
-    </div>
-    <div
-      className="pt-4"
-    >
-      <Icon
-        iconname="icon-add-active"
-      />
-    </div>
-  </div>
+  <ComponentLoader
+    data={Object {}}
+    name="add_new_address"
+  />
   <div
     className="sh-actions d-flex mt-5 justify-content-between pt-2 pb-2"
   >
