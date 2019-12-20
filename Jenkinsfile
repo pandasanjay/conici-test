@@ -19,9 +19,11 @@ pipeline {
             }
         }
         stage("Bdd Test") {
+            agent {
+                docker { image 'cypress/included:3.2.0' }
+            }
             steps {
-                sh "./node_modules/.bin/cypress install"
-                sh "./node_modules/.bin/cypress run"
+                sh "cypress run"
             }
         }
     }
