@@ -15,7 +15,7 @@ pipeline {
         }
         stage("Unit Test") {
             steps {
-                sh "npm test"
+                sh "./node_modules/.bin/jest"
             }
         }
         stage("Bdd Test") {
