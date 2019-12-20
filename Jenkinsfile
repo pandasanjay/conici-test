@@ -20,6 +20,7 @@ pipeline {
         }
         stage("Bdd Test") {
             steps {
+                sh "./node_modules/.bin/cypress install"
                 sh "./node_modules/.bin/cypress run"
             }
         }
