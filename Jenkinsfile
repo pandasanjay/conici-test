@@ -1,9 +1,13 @@
 pipeline {
     agent {
-        docker { image 'node:12.14-alpine' }
+        docker { 
+            image 'node:12.14-alpine', 
+            args  '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
     }
     stages {
-        stage("dependency") {
+            
+        stage("install dependency") {
             steps {
                 sh "npm install"
             }
@@ -18,7 +22,7 @@ pipeline {
                 sh "./node_modules/.bin/jest"
             }
         }
-        stage("Bdd Test") {
+         stage("Bdd Test") {
             agent {
                 docker { image 'cypress/included:3.2.0' }
             }
@@ -26,5 +30,6 @@ pipeline {
                 sh "cypress run"
             }
         }
-    }
+    }   
+
 }
