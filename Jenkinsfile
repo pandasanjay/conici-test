@@ -1,8 +1,7 @@
 pipeline {
     agent none
-    trigger
     stages {
-         stage{
+         stage("Build") {
             docker { 
                 image 'node:12.14-alpine'
             }
