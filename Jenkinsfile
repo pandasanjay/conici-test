@@ -11,7 +11,6 @@ pipeline {
                     steps {
                         echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
                         sh 'npm ci'
-                        sh 'npm run cy:verify'
                     }
                 }
                 stage("Build") {
@@ -33,6 +32,7 @@ pipeline {
             stages{
                 stage('start local server') {
                     steps {
+                        sh 'npm run cy:verify'
                         // start local server in the background
                         // we will shut it down in "post" command block
                         sh 'nohup npm run start:ci &'
