@@ -1,3 +1,4 @@
+def serve_pid
 pipeline {
     agent none
     stages {
@@ -26,7 +27,6 @@ pipeline {
              }
          }   
          stage("Bdd Test") {
-            def serve_pid
             agent {
                 docker { image 'cypress/base:10' }
             }
@@ -38,7 +38,7 @@ pipeline {
                         // we will shut it down in "post" command block
                         sh "nohup npm run start:ci &"
                         script {
-                            serve_pid = sh(returnStdout: true, script: 'echo $!').trim()
+                            serve_pid = sh(returnStdout: true, script: 'echo $$').trim()
                             echo "pid ${serve_pid}"
                         }
                         sh "./node_modules/.bin/wait-on http://localhost:9000"
