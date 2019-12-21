@@ -35,7 +35,8 @@ pipeline {
                         sh 'npm run cy:verify'
                         // start local server in the background
                         // we will shut it down in "post" command block
-                        sh 'nohup npm run start:ci &'
+                        sh "nohup npm run start:ci &"
+                        sh "./node_modules/.bin/wait-on http://localhost:9000"
                     }
                 }
                 stage('Run bdd') {
