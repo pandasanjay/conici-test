@@ -25,6 +25,7 @@ pipeline {
                 }
              }
          }   
+         def SERVE_PID
          stage("Bdd Test") {
             agent {
                 docker { image 'cypress/base:10' }
@@ -36,6 +37,11 @@ pipeline {
                         // start local server in the background
                         // we will shut it down in "post" command block
                         sh "nohup npm run start:ci &"
+                        SERVE_PID = sh(
+                            script: "echo $!",
+                            returnStdout: true
+                        )
+                        sh "echo ${SERVE_PID}"
                         sh "./node_modules/.bin/wait-on http://localhost:9000"
                     }
                 }
@@ -49,7 +55,7 @@ pipeline {
             post {
                 always {
                     echo 'Stopping local server'
-                    sh 'pkill -f http-server'
+                    sh "kill ${SERVE_PID}"
                 }
             }
             
