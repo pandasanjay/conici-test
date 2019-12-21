@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --host 0.0.0.0 --mode development --watch-poll 500 --watch-aggregate-timeout 300 --watch ",
     "build": "webpack --mode production",
     "test": "jest --watch",
-    "start:ci": "serve dist --no-clipboard --listen ${PORT:-8000}",
+    "start:ci": "serve dist --no-clipboard --listen ${PORT:-9000}",
     "cy:verify": "cypress verify",
     "cy:version": "cypress version",
     "cy:run": "cypress run",
