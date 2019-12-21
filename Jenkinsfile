@@ -38,7 +38,7 @@ pipeline {
                         // we will shut it down in "post" command block
                         sh "nohup npm run start:ci &"
                         script {
-                            serve_pid = sh(returnStdout: true, script: 'echo $$').trim()
+                            serve_pid = sh(returnStdout: true, script: 'nohup npm run start:ci & echo $!').trim()
                             echo "pid ${serve_pid}"
                         }
                         sh "./node_modules/.bin/wait-on http://localhost:9000"

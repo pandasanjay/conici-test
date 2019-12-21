@@ -1,0 +1,10 @@
+
+> conichi-smart-checkout@1.0.0 start:ci /home/sanjay/workspace/conici-test
+> serve dist --no-clipboard --listen ${PORT:-9000}
+
+INFO: Accepting connections at http://localhost:9000
+
+> conichi-smart-checkout@1.0.0 start:ci /home/sanjay/workspace/conici-test
+> serve dist --no-clipboard --listen ${PORT:-9000}
+
+INFO: Accepting connections at http://localhost:44541
