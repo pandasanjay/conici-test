@@ -1,4 +1,4 @@
-def SERVE_PID
+def serve_pid
 pipeline {
     agent none
     stages {
@@ -38,12 +38,9 @@ pipeline {
                         // we will shut it down in "post" command block
                         sh "nohup npm run start:ci &"
                         script {
-                            SERVE_PID = sh(
-                                script: 'echo $!',
-                                returnStdout: true
-                            )
+                            serve_pid = sh(returnStdout: true, script: 'echo $!').trim()
+                            echo "${serve_pid}"
                         }
-                        sh "echo ${SERVE_PID}"
                         sh "./node_modules/.bin/wait-on http://localhost:9000"
                     }
                 }
@@ -57,7 +54,7 @@ pipeline {
             post {
                 always {
                     echo 'Stopping local server'
-                    sh "kill ${SERVE_PID}"
+                    sh "kill ${serve_pid}"
                 }
             }
             
