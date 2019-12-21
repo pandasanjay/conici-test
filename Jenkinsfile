@@ -2,9 +2,10 @@ pipeline {
     agent none
     stages {
          stage("Build") {
-            docker { 
-                image 'node:12.14-alpine'
+             agent {
+                docker { image 'node:12.14-alpine'}
             }
+            
              stages{
                 stage("install dependency") {
                     steps {
