@@ -1,11 +1,12 @@
 pipeline {
     agent none
+    trigger
     stages {
          stage{
+            docker { 
+                image 'node:12.14-alpine'
+            }
              stages{
-                 docker { 
-                    image 'node:12.14-alpine'
-                }
                 stage("install dependency") {
                     steps {
                         sh "npm install"
