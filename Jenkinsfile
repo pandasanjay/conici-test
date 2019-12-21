@@ -1,37 +1,28 @@
 pipeline {
     agent none
     stages {
-            
-        stage("install dependency") {
-            agent {
-                docker { 
+         stage{
+             stages{
+                 docker { 
                     image 'node:12.14-alpine'
                 }
-            }
-            steps {
-                sh "npm install"
-            }
-        }
-        stage("Build") {
-            agent {
-                docker { 
-                    image 'node:12.14-alpine'
+                stage("install dependency") {
+                    steps {
+                        sh "npm install"
+                    }
                 }
-            }
-            steps {
-                sh "npm build"
-            }
-        }
-        stage("Unit Test") {
-            agent {
-                docker { 
-                    image 'node:12.14-alpine'
+                stage("Build") {
+                    steps {
+                        sh "npm build"
+                    }
                 }
-            }
-            steps {
-                sh "./node_modules/.bin/jest"
-            }
-        }
+                stage("Unit Test") {
+                    steps {
+                        sh "./node_modules/.bin/jest"
+                    }
+                }
+             }
+         }   
          stage("Bdd Test") {
             agent {
                 docker { image 'cypress/included:3.2.0' }
