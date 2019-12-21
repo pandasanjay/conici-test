@@ -1,3 +1,4 @@
+def SERVE_PID
 pipeline {
     agent none
     stages {
@@ -25,7 +26,6 @@ pipeline {
                 }
              }
          }   
-         def SERVE_PID
          stage("Bdd Test") {
             agent {
                 docker { image 'cypress/base:10' }
