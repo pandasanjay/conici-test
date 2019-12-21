@@ -9,7 +9,9 @@ pipeline {
              stages{
                 stage("install dependency") {
                     steps {
-                        sh "npm install"
+                        echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                        sh 'npm ci'
+                        sh 'npm run cy:verify'
                     }
                 }
                 stage("Build") {
@@ -26,11 +28,31 @@ pipeline {
          }   
          stage("Bdd Test") {
             agent {
-                docker { image 'cypress/included:3.2.0' }
+                docker { image 'cypress/base:10' }
             }
-            steps {
-                sh "cypress run"
+            stages{
+                stage('start local server') {
+                    steps {
+                        // start local server in the background
+                        // we will shut it down in "post" command block
+                        sh 'nohup npm run start:ci &'
+                    }
+                }
+                stage('Run bdd') {
+                    steps {
+                        echo "Running build ${env.BUILD_ID}"
+                        sh "npm run cy:run"
+                    }
+                }
             }
+            post {
+                always {
+                    echo 'Stopping local server'
+                    sh 'pkill -f http-server'
+                }
+            }
+            
+
         }
     }   
 

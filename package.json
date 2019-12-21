@@ -7,6 +7,12 @@
     "start": "webpack-dev-server --host 0.0.0.0 --mode development --watch-poll 500 --watch-aggregate-timeout 300 --watch ",
     "build": "webpack --mode production",
     "test": "jest --watch",
+    "start:ci": "serve dist --no-clipboard --listen ${PORT:-8000}",
+    "cy:verify": "cypress verify",
+    "cy:version": "cypress version",
+    "cy:run": "cypress run",
+    "cy:run:record": "cypress run --record",
+    "cy:open": "cypress open",
     "docker:image:build": "docker image build -t conichi-smart-checkout:app .",
     "docker:run:watch:linux": "docker container run -it -p 9000:9000 -v $(pwd):/app conichi-smart-checkout:app",
     "docker:run:watch:win": "docker container run -it -p 9000:9000 -v ${PWD}:/app conichi-smart-checkout:app",
@@ -61,6 +67,7 @@
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "serve": "^11.2.0"
   }
 }
